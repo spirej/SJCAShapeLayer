@@ -17,6 +17,10 @@
 		093548641E56910900D2B863 /* SJCAShapeLayerUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 093548631E56910900D2B863 /* SJCAShapeLayerUITests.m */; };
 		093548751E569BCA00D2B863 /* SJLineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 093548741E569BCA00D2B863 /* SJLineViewController.m */; };
 		093548781E569D3600D2B863 /* SJCurveViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 093548771E569D3600D2B863 /* SJCurveViewController.m */; };
+		0942ED841E5E832D00BB0723 /* SJBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0942ED831E5E832D00BB0723 /* SJBarViewController.m */; };
+		0942ED881E5E965100BB0723 /* SJBarChart.m in Sources */ = {isa = PBXBuildFile; fileRef = 0942ED871E5E965100BB0723 /* SJBarChart.m */; };
+		098ECB4B1E5FDFA5001798EC /* SJLineChartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 098ECB4A1E5FDFA5001798EC /* SJLineChartViewController.m */; };
+		098ECB4E1E5FE07B001798EC /* SJLineChart.m in Sources */ = {isa = PBXBuildFile; fileRef = 098ECB4D1E5FE07B001798EC /* SJLineChart.m */; };
 		09EFBDCF1E5A982600D9735E /* SJAnimationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 09EFBDCE1E5A982600D9735E /* SJAnimationViewController.m */; };
 /* End PBXBuildFile section */
 
@@ -60,6 +64,14 @@
 		093548741E569BCA00D2B863 /* SJLineViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SJLineViewController.m; sourceTree = "<group>"; };
 		093548761E569D3600D2B863 /* SJCurveViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SJCurveViewController.h; sourceTree = "<group>"; };
 		093548771E569D3600D2B863 /* SJCurveViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SJCurveViewController.m; sourceTree = "<group>"; };
+		0942ED821E5E832D00BB0723 /* SJBarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SJBarViewController.h; sourceTree = "<group>"; };
+		0942ED831E5E832D00BB0723 /* SJBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SJBarViewController.m; sourceTree = "<group>"; };
+		0942ED861E5E965100BB0723 /* SJBarChart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SJBarChart.h; sourceTree = "<group>"; };
+		0942ED871E5E965100BB0723 /* SJBarChart.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SJBarChart.m; sourceTree = "<group>"; };
+		098ECB491E5FDFA5001798EC /* SJLineChartViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SJLineChartViewController.h; sourceTree = "<group>"; };
+		098ECB4A1E5FDFA5001798EC /* SJLineChartViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SJLineChartViewController.m; sourceTree = "<group>"; };
+		098ECB4C1E5FE07B001798EC /* SJLineChart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SJLineChart.h; sourceTree = "<group>"; };
+		098ECB4D1E5FE07B001798EC /* SJLineChart.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SJLineChart.m; sourceTree = "<group>"; };
 		09EFBDCD1E5A982600D9735E /* SJAnimationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SJAnimationViewController.h; sourceTree = "<group>"; };
 		09EFBDCE1E5A982600D9735E /* SJAnimationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SJAnimationViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -112,6 +124,8 @@
 		0935483D1E56910800D2B863 /* SJCAShapeLayer */ = {
 			isa = PBXGroup;
 			children = (
+				098ECB481E5FDF88001798EC /* LineChart */,
+				0942ED851E5E90BF00BB0723 /* BarChart */,
 				093548411E56910800D2B863 /* AppDelegate.h */,
 				093548421E56910800D2B863 /* AppDelegate.m */,
 				093548731E569BCA00D2B863 /* SJLineViewController.h */,
@@ -157,6 +171,28 @@
 				093548651E56910900D2B863 /* Info.plist */,
 			);
 			path = SJCAShapeLayerUITests;
+			sourceTree = "<group>";
+		};
+		0942ED851E5E90BF00BB0723 /* BarChart */ = {
+			isa = PBXGroup;
+			children = (
+				0942ED821E5E832D00BB0723 /* SJBarViewController.h */,
+				0942ED831E5E832D00BB0723 /* SJBarViewController.m */,
+				0942ED861E5E965100BB0723 /* SJBarChart.h */,
+				0942ED871E5E965100BB0723 /* SJBarChart.m */,
+			);
+			name = BarChart;
+			sourceTree = "<group>";
+		};
+		098ECB481E5FDF88001798EC /* LineChart */ = {
+			isa = PBXGroup;
+			children = (
+				098ECB491E5FDFA5001798EC /* SJLineChartViewController.h */,
+				098ECB4A1E5FDFA5001798EC /* SJLineChartViewController.m */,
+				098ECB4C1E5FE07B001798EC /* SJLineChart.h */,
+				098ECB4D1E5FE07B001798EC /* SJLineChart.m */,
+			);
+			name = LineChart;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -297,6 +333,10 @@
 				093548461E56910800D2B863 /* ViewController.m in Sources */,
 				093548751E569BCA00D2B863 /* SJLineViewController.m in Sources */,
 				093548431E56910800D2B863 /* AppDelegate.m in Sources */,
+				098ECB4E1E5FE07B001798EC /* SJLineChart.m in Sources */,
+				0942ED881E5E965100BB0723 /* SJBarChart.m in Sources */,
+				0942ED841E5E832D00BB0723 /* SJBarViewController.m in Sources */,
+				098ECB4B1E5FDFA5001798EC /* SJLineChartViewController.m in Sources */,
 				093548781E569D3600D2B863 /* SJCurveViewController.m in Sources */,
 				09EFBDCF1E5A982600D9735E /* SJAnimationViewController.m in Sources */,
 				093548401E56910800D2B863 /* main.m in Sources */,

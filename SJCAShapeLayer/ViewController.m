@@ -10,6 +10,8 @@
 #import "SJLineViewController.h"
 #import "SJCurveViewController.h"
 #import "SJAnimationViewController.h"
+#import "SJBarViewController.h"
+#import "SJLineChartViewController.h"
 
 static NSString *navTitle = @"分类";
 
@@ -24,7 +26,7 @@ static NSString *navTitle = @"分类";
     [super viewDidLoad];
     self.navigationItem.title = navTitle;
     self.view.backgroundColor = kVCViewBGColor;
-    self.itemsArray = @[@"直线", @"曲线", @"动画"];
+    self.itemsArray = @[@"直线", @"曲线", @"动画", @"简单柱状图", @"折线图"];
     [self.view addSubview:self.mTableView];
 }
 
@@ -65,6 +67,18 @@ static NSString *navTitle = @"分类";
         case 2: {
             SJAnimationViewController *animaVC = [[SJAnimationViewController alloc] init];
             [self.navigationController pushViewController:animaVC animated:YES];
+        }
+            break;
+            
+        case 3: {
+            SJBarViewController *barVC = [[SJBarViewController alloc] init];
+            [self.navigationController pushViewController:barVC animated:YES];
+        }
+            break;
+            
+        case 4: {
+            SJLineChartViewController *lineChartVC = [[SJLineChartViewController alloc] init];
+            [self.navigationController pushViewController:lineChartVC animated:YES];
         }
             break;
             
