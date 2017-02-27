@@ -8,7 +8,7 @@
 
 #import "SJAnimationViewController.h"
 
-#define kItemsCount     6
+#define kItemsCount     7
 @interface SJAnimationViewController ()
 {
     CAShapeLayer *line;
@@ -17,6 +17,7 @@
     CAShapeLayer *circle;
     CAShapeLayer *circleTwo;
     CAShapeLayer *circleProgress;
+    CAShapeLayer *xuCircle;
 }
 @property (nonatomic, strong) UIScrollView *scrollView;
 @property (nonatomic, strong) CABasicAnimation *animComm;
@@ -65,6 +66,7 @@
     [self ani_circle];
     [self ani_circleTwo];
     [self ani_circleProgress];
+    [self ani_drawXuCircle];
 }
 
 - (void)refreshAnimation:(UIButton *)btn {
@@ -87,6 +89,9 @@
             break;
         case 109:
             [circleProgress addAnimation:self.animProgress forKey:nil];
+            break;
+        case 110:
+            [xuCircle addAnimation:self.animProgress forKey:nil];
             break;
         default:
             break;
@@ -237,6 +242,38 @@
     [view.layer addSublayer:circleProgress];
     [circleProgress addAnimation:self.animProgress forKey:nil];
 }
+
+//虚线
+- (void)ani_drawXuCircle {
+    UIView *view = [self.view viewWithTag:1030];
+    UILabel *label = [view viewWithTag:530];
+    label.text = @"虚线圆（进度圆）";
+    
+    //底部虚圆
+    CAShapeLayer *bgCircle = [CAShapeLayer layer];
+    bgCircle.lineWidth = 10;
+    bgCircle.strokeColor = ColorWithHex(0xbebebe, 1).CGColor;
+    bgCircle.fillColor = nil;
+    bgCircle.lineJoin = kCALineJoinMiter;
+    bgCircle.lineDashPattern = @[@2,@3];
+    [view.layer addSublayer:bgCircle];
+    
+    //外部虚圆
+    xuCircle = [CAShapeLayer layer];
+    xuCircle.lineWidth = 10;
+    xuCircle.strokeColor = ColorWithHex(0xa2d100, 1).CGColor;
+    xuCircle.fillColor = nil;
+    xuCircle.lineJoin = kCALineJoinMiter;
+    xuCircle.lineDashPattern = @[@2,@3];
+    [view.layer addSublayer:xuCircle];
+    
+    UIBezierPath *bezierPath = [UIBezierPath bezierPathWithArcCenter:CGPointMake(kDeviceWidth/2.0, 100) radius:55 startAngle:-M_PI_2 endAngle:3*M_PI_2 clockwise:YES];
+    
+    bgCircle.path = bezierPath.CGPath;
+    xuCircle.path = bezierPath.CGPath;
+    [xuCircle addAnimation:self.animProgress forKey:nil];
+}
+
 
 
 - (UIScrollView *)scrollView {

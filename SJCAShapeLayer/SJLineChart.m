@@ -29,13 +29,6 @@ static CGFloat const radius     = 3.0f;     //标记每个点的小圆半径
 @end
 @implementation SJLineChart
 
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect {
-    // Drawing code
-}
-*/
 - (instancetype)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
     if (self) {

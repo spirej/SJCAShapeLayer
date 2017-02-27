@@ -7,7 +7,7 @@
 //
 
 #import "SJCurveViewController.h"
-
+#define kItems      6
 @interface SJCurveViewController ()
 @property (nonatomic, strong) UIScrollView *scrollView;
 @end
@@ -20,9 +20,9 @@
     self.navigationItem.title = kNavTitle;
     
     [self.view addSubview:self.scrollView];
-    self.scrollView.contentSize = CGSizeMake(0, (200+10)*5);
+    self.scrollView.contentSize = CGSizeMake(0, (200+10)*kItems);
     
-    for (NSInteger i = 0; i < 5; i++) {
+    for (NSInteger i = 0; i < kItems; i++) {
         UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, (200+10)*i, kDeviceWidth, 200)];
         view.backgroundColor = ColorWithHex(0xb8abbb, 1);
         view.tag = 1024+i;
@@ -40,6 +40,7 @@
     [self drawCircle];
     [self drawMask];
     [self drawRectRound];
+    [self drawXuCircle];
 }
 
 
@@ -193,6 +194,40 @@
     
     [view.layer addSublayer:layer];
 }
+
+//虚线圆
+- (void)drawXuCircle {
+    UIView *view = [self.view viewWithTag:1029];
+    UILabel *label = [view viewWithTag:529];
+    label.text = @"虚线圆（进度圆）";
+    
+    //底部虚圆
+    CAShapeLayer *xuCircle = [CAShapeLayer layer];
+    xuCircle.lineWidth = 10;
+    xuCircle.strokeColor = ColorWithHex(0xbebebe, 1).CGColor;
+    xuCircle.fillColor = nil;
+    xuCircle.lineJoin = kCALineJoinMiter;
+    xuCircle.lineDashPattern = @[@2,@3];
+    [view.layer addSublayer:xuCircle];
+    
+    //外部虚圆
+    CAShapeLayer *circle = [CAShapeLayer layer];
+    circle.lineWidth = 10;
+    circle.strokeColor = ColorWithHex(0xa2d100, 1).CGColor;
+    circle.fillColor = nil;
+    circle.lineJoin = kCALineJoinMiter;
+    circle.lineDashPattern = @[@2,@3];
+    [view.layer addSublayer:circle];
+
+    
+    UIBezierPath *xuBezierPath = [UIBezierPath bezierPathWithArcCenter:CGPointMake(kDeviceWidth/2.0, 100) radius:55 startAngle:-M_PI_2 endAngle:3*M_PI_2 clockwise:YES];
+    
+    UIBezierPath *bezierPath = [UIBezierPath bezierPathWithArcCenter:CGPointMake(kDeviceWidth/2.0, 100) radius:55 startAngle:-M_PI_2 endAngle:M_PI_2 clockwise:YES];
+    
+    xuCircle.path = xuBezierPath.CGPath;
+    circle.path = bezierPath.CGPath;
+}
+
 
 
 - (UIScrollView *)scrollView {

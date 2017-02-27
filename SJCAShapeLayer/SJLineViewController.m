@@ -8,6 +8,7 @@
 
 #import "SJLineViewController.h"
 
+#define kItems      6
 @interface SJLineViewController ()
 @property (nonatomic, strong) UIScrollView *scrollView;
 @end
@@ -20,9 +21,9 @@
     self.view.backgroundColor = kVCViewBGColor;
     
     [self.view addSubview:self.scrollView];
-    self.scrollView.contentSize = CGSizeMake(0, (200+10)*6);
+    self.scrollView.contentSize = CGSizeMake(0, (200+10)*kItems);
     
-    for (NSInteger i = 0; i < 6; i++) {
+    for (NSInteger i = 0; i < kItems; i++) {
         UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, (200+10)*i, kDeviceWidth, 200)];
         view.backgroundColor = ColorWithHex(0xb8abbb, 1);
         view.tag = 1024+i;

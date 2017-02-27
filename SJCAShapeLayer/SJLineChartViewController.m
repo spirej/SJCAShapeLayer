@@ -22,7 +22,7 @@
     self.navigationItem.title = @"折线图";
     
     //假数据
-    NSArray *sourceArray = @[@20, @25, @50, @30, @20, @25, @10];
+    NSArray *sourceArray = @[@20, @25, @50, @30, @20, @25, @10, @15, @8];
     
     SJLineChart *lineChart = [[SJLineChart alloc] initWithFrame:CGRectMake(0, 100, kDeviceWidth, 300)];
     [lineChart showLineChart:sourceArray];
